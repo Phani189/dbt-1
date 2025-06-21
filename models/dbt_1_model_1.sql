@@ -1,9 +1,9 @@
 with customer_orders as (
     select
-        customer_id,
+        user_id as customer_id,
         min(order_date) as first_order_date,
         max(order_date) as most_recent_order_date,
-        count(order_id) as number_of_orders
+        count(id) as number_of_orders
 
     from raw.jaffle_shop.orders
 
@@ -11,7 +11,7 @@ with customer_orders as (
 )
 
 select
-    customers.customer_id,
+    customers.id as customer_id,
     customers.first_name,
     customers.last_name,
     customer_orders.first_order_date,
@@ -20,4 +20,4 @@ select
 
 from raw.jaffle_shop.customers
 
-left join customer_orders using (customer_id)
+left join customer_orders on raw.jaffle_shop.customers.id=customer_orders.customer_id
