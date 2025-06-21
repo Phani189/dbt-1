@@ -5,7 +5,7 @@ with customer_orders as (
         max(order_date) as most_recent_order_date,
         count(order_id) as number_of_orders
 
-    from jaffle_shop.orders
+    from raw.jaffle_shop.orders
 
     group by 1
 )
@@ -18,6 +18,6 @@ select
     customer_orders.most_recent_order_date,
     coalesce(customer_orders.number_of_orders, 0) as number_of_orders
 
-from jaffle_shop.customers
+from raw.jaffle_shop.customers
 
 left join customer_orders using (customer_id)
