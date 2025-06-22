@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_customers
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        description: Raw customer data from ERP system
+      - name: orders
