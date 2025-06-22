@@ -45,4 +45,3 @@ models:
     +materialized: table
     folder_1:
       +schema: marketing
-
