@@ -1,0 +1,14 @@
+version: 2
+sources:
+  - name: sample
+    database: source_db
+    schema: sample1
+    tables:
+      - name: emp_detail 
+      - name: cust_detail
+models:
+  - name: dbt_model9
+  - name : dbt_model10
+    tests: 
+      - customtest_2
+  
