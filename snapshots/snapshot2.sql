@@ -1,20 +1,20 @@
-{% SNAPSHOT FIRST_MODEL_SNAPSHOT_1 %} 
+{% snapshot first_model_snapshot %} 
 
     {{ 
 
-        CONFIG( 
+        config( 
 
-          TARGET_DATABASE='ANALYTICS', 
+          target_database='analytics', 
 
-          TARGET_SCHEMA='SNAPSHOTS', 
+          target_schema='snapshots', 
 
-          UNIQUE_KEY='ID', 
+          unique_key='id', 
 
  
 
-          STRATEGY='TIMESTAMP', 
+          strategy='timestamp', 
 
-          UPDATED_AT='UPDATED_AT', 
+          updated_at='updated_at', 
 
         ) 
 
@@ -22,10 +22,10 @@
 
  
 
-    SELECT * FROM {{ REF('snap_model2') }} 
+    select * from {{ ref('snap_model2') }} 
 
  
 
-  {% ENDSNAPSHOT %} 
+  {% endsnapshot %} 
 
  

@@ -1,20 +1,14 @@
 {{ config(materialized='table') }} 
 
-WITH SOURCE_DATA AS ( 
+with source_data as ( 
 
  
 
-    SELECT 1 AS ID, 'CA' AS STATE, '2020-01-01 00:00:00.000'::TIMESTAMP AS UPDATED_AT 
-
-    UNION ALL 
-
-    SELECT NULL AS ID, 'CT' AS STATE, '2020-01-01 00:00:00.000'::TIMESTAMP AS UPDATED_AT 
-
-    UNION ALL 
-
-    SELECT 3 AS ID, 'VT' AS STATE, '2020-01-01 00:00:00.000'::TIMESTAMP AS UPDATED_AT 
-
- 
+    select 1 AS id, 'NY' AS state, '2020-02-01 00:00:00.000'::timestamp AS updated_at 
+    union all
+    select null as id, 'CT' as state ,'2020-01-01 00:00:00.000'::timestamp AS updated_at 
+    union all
+    select 3 as id,'VT' as state,'2020-01-01 00:00:00.000'::timestamp AS updated_at 
 
 ) 
-select * from SOURCE_DATA
+select * from source_data
