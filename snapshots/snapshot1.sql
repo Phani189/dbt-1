@@ -4,17 +4,17 @@
 
         config( 
 
-          TARGET_DATABASE='ANALYTICS', 
+          target_database='ANALYTICS', 
 
-          TARGET_SCHEMA='SNAPSHOTS', 
+          target_schema='SNAPSHOTS', 
 
-          UNIQUE_KEY='emp_id', 
+          unique_key='emp_id', 
 
  
 
-          STRATEGY='TIMESTAMP', 
+          strategy='timestamp', 
 
-          UPDATED_AT='UPDATED_AT', 
+          updated_at='UPDATED_AT', 
 
         ) 
 
