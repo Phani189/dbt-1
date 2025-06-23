@@ -1,4 +1,4 @@
-{{ config(materialized='table', alias='FIRST_MODEL_SNAPSHOT') }} 
+{{ config(materialized='table') }} 
 
 WITH SOURCE_DATA AS ( 
 

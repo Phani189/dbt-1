@@ -1,4 +1,4 @@
-{% snapshots FIRST_MODEL_SNAPSHOT %} 
+{% snapshots FIRST_MODEL_SNAPSHOT%} 
 
     {{ 
 
@@ -22,7 +22,7 @@
 
  
 
-    SELECT * FROM {{ REF('MY_FIRST_DBT_MODEL') }} 
+    SELECT * FROM {{ REF('snap_model') }} 
 
  
 
