@@ -1,0 +1,22 @@
+version: 2
+sources:
+  - name: raw_source
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: orders
+        description: orders data
+snapshots:
+  - name: snapshot_model_5
+    relation: source('raw_source', 'orders')
+    description:  this is second but third snapshot
+    config:
+      database: analytics
+      schema: snapshots
+      alias: snap_model_5
+      strategy: timestamp
+      unique_key: id
+      updated_at: _etl_loaded_at
+      
+     
+

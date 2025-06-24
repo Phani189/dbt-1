@@ -1,0 +1,22 @@
+version: 2
+sources:
+  - name: emp_details_source
+    database: training_1
+    schema: tr_schema
+    tables:
+      - name: employee_dim
+        description: employee data
+snapshots:
+  - name: snapshot_model_3
+    relation: source('emp_details_source', 'employee_dim')
+    description:  this is second but third snapshot
+    config:
+      database: analytics
+      schema: snapshots
+      alias: snap_model_3
+      strategy: timestamp
+      unique_key: emp_id
+      updated_at: updated_at
+      
+     
+
