@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: sample1
+    database: TRAINING_1
+    schema: |
+      {%- if target.name == "dev" -%} dev_schema
+      {%- elif target.name == "prod" -%} prod_schema
+      {%- elif target.name == "test" -%} test_schema
+      {%- else -%} invalid_schema
+      {%- endif -%}
+    tables:
+      - name: emp_detail
+
+models:
+  - name: emp_model
+    description: "Model to fetch employee details from source"
