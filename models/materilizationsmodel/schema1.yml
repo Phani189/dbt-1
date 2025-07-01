@@ -1,0 +1,12 @@
+version: 2
+models:
+  - name: page_views
+    config:
+      event_time: page_view_start
+sources:
+  - name: micro_source
+    database: training_1
+    schema: tr_schema
+    tables:
+      - name: page_views
+      - name: customers
