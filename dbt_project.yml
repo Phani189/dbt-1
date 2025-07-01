@@ -19,3 +19,4 @@ clean-targets:
 models:
   my_new_project:
     +materialized: table
+    
